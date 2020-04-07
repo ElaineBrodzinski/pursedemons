@@ -21,22 +21,42 @@ running = True
 red_value = 125
 green_value = 125
 blue_value = 125
-x_axis = 100
-y_axis = 100
+x_position = 100
+y_position = 100
 size_value = 100
 
+# The amount to change the x and y positions per second.
+x_speed = 0
+y_speed = 0
+
+fps = 30
+
 clock = pygame.time.Clock()
+
+################# CHALLENGE: make the arrow keys controls the circle
+################# BONUS CHALLENGE: let people press R to make it Red, G to make it Green, and some others.
+
 while running:
     # Did the user click the window close button?
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    
-    
+        if event.type == pygame.KEYDOWN:
+            print("I pressed down this key:", event, event.key)
 
-    # keys = pygame.key.get_pressed()
+            if event.key == pygame.K_ESCAPE:
+                running = False
+            if event.key == pygame.K_DOWN:
+                y_speed = 50
+                print("you pressed DOWN")
+            if event.key == pygame.K_UP:
+                y_speed = -50
+                print("I want to buy DOOM ETERNAL")
 
-    clock.tick(30)
+    clock.tick(fps)
+
+    x_position += x_speed / fps
+    y_position += y_speed / fps
 
     # Fill the background with white
     screen.fill((255, 255, 255))
@@ -44,9 +64,9 @@ while running:
     # Draw a solid blue circle in the center
     #pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
     # you don't need the {...}
-    pygame.draw.circle(screen, (red_value, green_value, blue_value), (x_axis, y_axis), size_value)
-
-    x_axis += 1
+    color = red_value, green_value, blue_value
+    position = int(round(x_position)), int(round(y_position))
+    pygame.draw.circle(screen, color, position, size_value)
 
     # Flip the display
     pygame.display.flip()
@@ -58,7 +78,7 @@ pygame.quit()
 
 
 
-    #pygame.draw.circle(screen, ({red_value}, {green_value}, {blue_value}), ({x_axis}, {y_axis}), {size_value})
+    #pygame.draw.circle(screen, ({red_value}, {green_value}, {blue_value}), ({x_position}, {y_position}), {size_value})
     #this is amounts of red, blue, and yellow isn't it. probably in the order of red / yellow / blue
     #since 100 / 100 gives me purple.
     #100 gives me dark crimson red. I want lighter though.
