@@ -9,29 +9,34 @@ import pygame
 
 pygame.init()
 
-def input_game_values():
-    print("Please only insert values between 0 and 250")
-    red_value = int(input("What is the red value?"))
-    green_value = int(input("What is the green value?"))
-    blue_value = int(input("What is the blue value?"))
-    x_axis = int(input("Where do you want it placed on the x axis?"))
-    y_axis = int(input("Where do you want it placed on the y axis?"))
-    size_value = int(input("How large would you like your circle?"))
-    return red_value, green_value, blue_value, x_axis, y_axis, size_value
-
 # Set up the drawing window
-screen = pygame.display.set_mode([500, 500])
+screen = pygame.display.set_mode([512, 512])
+
+# our_image = pygame.image.load('an_image.png').convert_alpha()
+
 
 # Run until the user asks to quite
 running = True
 
-red_value, green_value, blue_value, x_axis, y_axis, size_value = input_game_values()
+red_value = 125
+green_value = 125
+blue_value = 125
+x_axis = 100
+y_axis = 100
+size_value = 100
 
+clock = pygame.time.Clock()
 while running:
     # Did the user click the window close button?
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    
+    
+
+    # keys = pygame.key.get_pressed()
+
+    clock.tick(30)
 
     # Fill the background with white
     screen.fill((255, 255, 255))
@@ -40,6 +45,18 @@ while running:
     #pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
     # you don't need the {...}
     pygame.draw.circle(screen, (red_value, green_value, blue_value), (x_axis, y_axis), size_value)
+
+    x_axis += 1
+
+    # Flip the display
+    pygame.display.flip()
+
+# Done! Time to quit.
+pygame.quit()
+
+
+
+
 
     #pygame.draw.circle(screen, ({red_value}, {green_value}, {blue_value}), ({x_axis}, {y_axis}), {size_value})
     #this is amounts of red, blue, and yellow isn't it. probably in the order of red / yellow / blue
@@ -58,10 +75,3 @@ while running:
     #225, 175, 25 is closer! Lighter yellow.
     #250, 175, 0 is too close to just an orange color even though it's brighter.
     #250, 250, 0 gives my bright yellow. Excellent.
-
-
-    # Flip the display
-    pygame.display.flip()
-
-# Done! Time to quit.
-pygame.quit()
