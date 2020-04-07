@@ -43,6 +43,13 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             print("I pressed down this key:", event, event.key)
+        #if event.type != pygame.KEYDOWN:
+            #x_speed = 0
+            #y_speed = 0
+
+            #if running == True
+            #x_speed = 0
+            #y_speed = 0
 
             if event.key == pygame.K_ESCAPE:
                 running = False
@@ -58,8 +65,6 @@ while running:
             if event.key == pygame.K_RIGHT:
                 x_speed = 50
                 print("Ban Terran")
-            if pygame.key.get_pressed() != pygame.K_DOWN:
-                x_speed = 0
             #if event.key != pygame.K_LEFT:
                 #x_speed = 0
                 #y_speed = 0
