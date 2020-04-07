@@ -1,10 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Simple pygame program
 
 # Import and initialize the pygame library
 import pygame
-
-
 
 
 pygame.init()
@@ -41,15 +39,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
         if event.type == pygame.KEYDOWN:
             print("I pressed down this key:", event, event.key)
-        #if event.type != pygame.KEYDOWN:
-            #x_speed = 0
-            #y_speed = 0
-
-            #if running == True
-            #x_speed = 0
-            #y_speed = 0
 
             if event.key == pygame.K_ESCAPE:
                 running = False
