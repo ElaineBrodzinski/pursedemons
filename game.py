@@ -38,31 +38,38 @@ while running:
     # Did the user click the window close button?
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            print("Exiting because the user")
             running = False
 
-        if event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN:
             print("I pressed down this key:", event, event.key)
 
             if event.key == pygame.K_ESCAPE:
+                print("Exiting because escape was pressed.")
                 running = False
-            if event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_DOWN:
                 y_speed = 50
                 print("you pressed DOWN")
-            if event.key == pygame.K_UP:
+            elif event.key == pygame.K_UP:
                 y_speed = -50
                 print("I want to buy DOOM ETERNAL")
-            if event.key == pygame.K_LEFT:
+            elif event.key == pygame.K_LEFT:
                 x_speed = -50
                 print("Zerg OP, but that's good")
-            if event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_RIGHT:
                 x_speed = 50
                 print("Ban Terran")
-            #if event.key != pygame.K_LEFT:
-                #x_speed = 0
-                #y_speed = 0
-                #aw damn, thought this was clever
+            else:
+                print("something else was pressed that I don't recognize")
+        
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_DOWN:
+                y_speed = 0
+                print("you pressed DOWN")
+            elif event.key == pygame.K_UP:
+                y_speed = 0
+                print("i missed a colon")
 
-                            
 
     clock.tick(fps)
 
