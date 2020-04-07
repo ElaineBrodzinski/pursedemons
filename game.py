@@ -52,6 +52,20 @@ while running:
             if event.key == pygame.K_UP:
                 y_speed = -50
                 print("I want to buy DOOM ETERNAL")
+            if event.key == pygame.K_LEFT:
+                x_speed = -50
+                print("Zerg OP, but that's good")
+            if event.key == pygame.K_RIGHT:
+                x_speed = 50
+                print("Ban Terran")
+            if pygame.key.get_pressed() != pygame.K_DOWN:
+                x_speed = 0
+            #if event.key != pygame.K_LEFT:
+                #x_speed = 0
+                #y_speed = 0
+                #aw damn, thought this was clever
+
+                            
 
     clock.tick(fps)
 
