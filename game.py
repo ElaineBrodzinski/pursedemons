@@ -1,115 +1,96 @@
-#!/usr/bin/env python3
-# Simple pygame program
-
-# Import and initialize the pygame library
+#!/usr/bin/env python3.8
 import pygame
 
-
+# Initialize pygame, so it can open a window and start listening for input.
 pygame.init()
 
-# Set up the drawing window
-screen = pygame.display.set_mode([512, 512])
+# Initialize a clock we'll use to set the framerate.
+clock = pygame.time.Clock()
+fps = 30
 
-# our_image = pygame.image.load('an_image.png').convert_alpha()
+# Set up the window we'll be drawing in
+window = pygame.display.set_mode([512, 512])
 
-
-# Run until the user asks to quite
+# We'll run until the user asks to quit.
 running = True
 
-red_value = 125
-green_value = 125
-blue_value = 125
+# We adjust these variables to control the Boo we draw below.
 x_position = 100
-y_position = 100
-size_value = 100
+y_position = 200
 
-# The amount to change the x and y positions per second.
+# The amount to change the x and y positions of the Boo per second.
 x_speed = 0
 y_speed = 0
 
-fps = 30
+# Load the image of Boo we'll be displaying.
+boo_image = pygame.image.load("boo.png").convert_alpha()
 
-clock = pygame.time.Clock()
-
-################# CHALLENGE: make the arrow keys controls the circle
-################# BONUS CHALLENGE: let people press R to make it Red, G to make it Green, and some others.
-
+# Loop forever until we set running to False, when the user tries to exit.
 while running:
-    # Did the user click the window close button?
+    # Wait until it's time for the next frame to be drawn.
+    clock.tick(fps)
+
+    # Loop over every input or event that has happened since the last frame.
     for event in pygame.event.get():
+        # If the user pressed the close button or alt+F4 or whatever, then...
         if event.type == pygame.QUIT:
-            print("Exiting because the user")
+            print("Exiting because the user told us to")
             running = False
 
+        # ...otherwise, if the user pressed a key, then...
         elif event.type == pygame.KEYDOWN:
-            print("I pressed down this key:", event, event.key)
-
             if event.key == pygame.K_ESCAPE:
                 print("Exiting because escape was pressed.")
                 running = False
             elif event.key == pygame.K_DOWN:
+                print("You pressed DOWN")
                 y_speed = 50
-                print("you pressed DOWN")
             elif event.key == pygame.K_UP:
+                print("You pressed UP")
                 y_speed = -50
-                print("I want to buy DOOM ETERNAL")
             elif event.key == pygame.K_LEFT:
+                print("You released LEFT")
                 x_speed = -50
-                print("Zerg OP, but that's good")
             elif event.key == pygame.K_RIGHT:
+                print("You released RIGHT")
                 x_speed = 50
-                print("Ban Terran")
             else:
-                print("something else was pressed that I don't recognize")
-        
+                print(
+                    "A key was pressed down that I don't recognize, with key code",
+                    event.key,
+                )
+
+        # ...otherwise, if the user released a key, then...
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
+                print("You released DOWN")
                 y_speed = 0
-                print("you pressed DOWN")
             elif event.key == pygame.K_UP:
+                print("You released UP")
                 y_speed = 0
-                print("i missed a colon")
+            else:
+                print(
+                    "A key was released up that I don't recognize, with key code",
+                    event.key,
+                )
 
+        # ...otherwise, log a message about the unrecognized event in case it's useful later.
+        else:
+            print("An event happened that I don't recognize:", event)
 
-    clock.tick(fps)
-
+    # Update position using the speed (per second), divided by the number of frames per second.
     x_position += x_speed / fps
     y_position += y_speed / fps
 
-    # Fill the background with white
-    screen.fill((255, 255, 255))
+    # Fill the background with white, overwriting the previous frame.
+    window.fill((255, 255, 255))
 
-    # Draw a solid blue circle in the center
-    #pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
-    # you don't need the {...}
-    color = red_value, green_value, blue_value
+    # Draw a Boo with the current position, color, and size.
     position = int(round(x_position)), int(round(y_position))
-    pygame.draw.circle(screen, color, position, size_value)
+    window.blit(boo_image, position)
 
-    # Flip the display
+    # Take the new frame we've drawn and display it.
     pygame.display.flip()
 
-# Done! Time to quit.
+# Running is now False. Time to quit, close the window and stop listening for events.
 pygame.quit()
-
-
-
-
-
-    #pygame.draw.circle(screen, ({red_value}, {green_value}, {blue_value}), ({x_position}, {y_position}), {size_value})
-    #this is amounts of red, blue, and yellow isn't it. probably in the order of red / yellow / blue
-    #since 100 / 100 gives me purple.
-    #100 gives me dark crimson red. I want lighter though.
-    #higher numbers gives me lighter, lower darker. interesting.
-    #aha 200 gives me what I want. 
-    #oh interesting! I've heard of RGB before. So middle is green. I think i've heard about bs with yellow
-    #and PCs before. So I'd need to do probably...hmm, not sure how I'd get to yellow. Probably fuck with it.
-    #pretty sure I'm right about the third being blue tho.
-    #yea i am
-    #self challenge time - achieve yellow
-    #175, 150, 50 gives me a dark pee yellow color. I want bright yellow though, like primary school yellow
-    #225, 175, 75 is like a yellow orange mix.
-    #225, 175, 100 is like a light orange.
-    #225, 175, 25 is closer! Lighter yellow.
-    #250, 175, 0 is too close to just an orange color even though it's brighter.
-    #250, 250, 0 gives my bright yellow. Excellent.
