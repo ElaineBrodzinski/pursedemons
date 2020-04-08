@@ -84,6 +84,19 @@ while running:
         else:
             print("An event happened that I don't recognize:", event)
 
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        pass  # left is currently held down
+    if keys[pygame.K_RIGHT]:
+        pass  # right is currently held down
+    if keys[pygame.K_UP]:
+        pass  # up is currently held down
+    if keys[pygame.K_DOWN]:
+        pass  # down is currently held down
+    # note that this is "if" instead of "elif", because multiple can happen at the same time,
+    # one doesn't exclude the following ones, like it did when we were looking at a single key
+    # event at the same time.
+
     # Update position using the speed (per second), divided by the number of frames per second.
     x_position += x_speed / fps
     y_position += y_speed / fps
