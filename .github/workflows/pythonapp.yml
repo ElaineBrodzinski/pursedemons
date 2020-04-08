@@ -32,8 +32,8 @@ jobs:
       - name: Check types with mypy
         run: |
           pip install mypy
-          mypy .
-        - name: Test with pytest
-          run: |
-            pip install pytest pytest-custom_exit_code
-            pytest --suppress-no-test-exit-code
+          mypy . --ignore-missing-imports
+      - name: Test with pytest
+        run: |
+          pip install pytest pytest-custom_exit_code
+          pytest --suppress-no-test-exit-code

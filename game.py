@@ -15,12 +15,12 @@ window = pygame.display.set_mode([512, 512])
 running = True
 
 # We adjust these variables to control the Boo we draw below.
-x_position = 100
-y_position = 200
+x_position = 100.0
+y_position = 200.0
 
 # The amount to change the x and y positions of the Boo per second.
-x_speed = 0
-y_speed = 0
+x_speed = 0.0
+y_speed = 0.0
 
 # Load the image of Boo we'll be displaying.
 boo_image = pygame.image.load("boo.png").convert_alpha()
@@ -37,7 +37,6 @@ while running:
             print("Exiting because the user told us to")
             running = False
 
-        
         # ...otherwise, log a message about the unrecognized event in case it's useful later.
         else:
             print("An event happened that I don't recognize:", event)
@@ -45,11 +44,11 @@ while running:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         x_speed = -50
-    else:  
+    else:
         x_speed = 0
-    #if keys[pygame.K_LEFT] !=:
-        #x_speed = 0
-        #nopelol
+    # if keys[pygame.K_LEFT] !=:
+    # x_speed = 0
+    # nopelol
     if keys[pygame.K_RIGHT]:
         x_speed = 50
     if x_speed < 0:
@@ -58,12 +57,12 @@ while running:
         x_speed = 0
     if keys[pygame.K_UP]:
         y_speed = -50
-    else: 
+    else:
         y_speed = 0
     if keys[pygame.K_DOWN]:
         y_speed = 50
-    if y_speed > 0: 
-        pass    
+    if y_speed > 0:
+        pass
     else:
         y_speed = 0
     # note that this is "if" instead of "elif", because multiple can happen at the same time,
