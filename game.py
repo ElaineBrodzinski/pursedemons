@@ -42,29 +42,16 @@ while running:
             print("An event happened that I don't recognize:", event)
 
     keys = pygame.key.get_pressed()
+    x_speed = 0
+    y_speed = 0
     if keys[pygame.K_LEFT]:
-        x_speed = -50
-    else:
-        x_speed = 0
-    # if keys[pygame.K_LEFT] !=:
-    # x_speed = 0
-    # nopelol
+        x_speed -= 50
     if keys[pygame.K_RIGHT]:
-        x_speed = 50
-    if x_speed < 0:
-        pass
-    else:
-        x_speed = 0
+        x_speed += 50
     if keys[pygame.K_UP]:
-        y_speed = -50
-    else:
-        y_speed = 0
+        y_speed -= 50
     if keys[pygame.K_DOWN]:
-        y_speed = 50
-    if y_speed > 0:
-        pass
-    else:
-        y_speed = 0
+        y_speed += 50
     # note that this is "if" instead of "elif", because multiple can happen at the same time,
     # one doesn't exclude the following ones, like it did when we were looking at a single key
     # event at the same time.
