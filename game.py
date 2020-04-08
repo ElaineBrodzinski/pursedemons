@@ -68,6 +68,12 @@ while running:
             elif event.key == pygame.K_UP:
                 print("You released UP")
                 y_speed = 0
+            elif event.key == pygame.K_LEFT:
+                x_speed = 0
+                print("You released LEFT")
+            elif event.key == pygame.K_RIGHT:
+                x_speed = 0 
+                print("You released RIGHT")
             else:
                 print(
                     "A key was released up that I don't recognize, with key code",
