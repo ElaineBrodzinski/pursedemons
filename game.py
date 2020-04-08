@@ -37,62 +37,35 @@ while running:
             print("Exiting because the user told us to")
             running = False
 
-        # ...otherwise, if the user pressed a key, then...
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                print("Exiting because escape was pressed.")
-                running = False
-            elif event.key == pygame.K_DOWN:
-                print("You pressed DOWN")
-                y_speed = 50
-            elif event.key == pygame.K_UP:
-                print("You pressed UP")
-                y_speed = -50
-            elif event.key == pygame.K_LEFT:
-                print("You released LEFT")
-                x_speed = -50
-            elif event.key == pygame.K_RIGHT:
-                print("You released RIGHT")
-                x_speed = 50
-            else:
-                print(
-                    "A key was pressed down that I don't recognize, with key code",
-                    event.key,
-                )
-
-        # ...otherwise, if the user released a key, then...
-        elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_DOWN:
-                print("You released DOWN")
-                y_speed = 0
-            elif event.key == pygame.K_UP:
-                print("You released UP")
-                y_speed = 0
-            elif event.key == pygame.K_LEFT:
-                x_speed = 0
-                print("You released LEFT")
-            elif event.key == pygame.K_RIGHT:
-                x_speed = 0 
-                print("You released RIGHT")
-            else:
-                print(
-                    "A key was released up that I don't recognize, with key code",
-                    event.key,
-                )
-
+        
         # ...otherwise, log a message about the unrecognized event in case it's useful later.
         else:
             print("An event happened that I don't recognize:", event)
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        pass  # left is currently held down
+        x_speed = -50
+    else:  
+        x_speed = 0
+    #if keys[pygame.K_LEFT] !=:
+        #x_speed = 0
+        #nopelol
     if keys[pygame.K_RIGHT]:
-        pass  # right is currently held down
+        x_speed = 50
+    if x_speed < 0:
+        pass
+    else:
+        x_speed = 0
     if keys[pygame.K_UP]:
-        pass  # up is currently held down
+        y_speed = -50
+    else: 
+        y_speed = 0
     if keys[pygame.K_DOWN]:
-        pass  # down is currently held down
+        y_speed = 50
+    if y_speed > 0: 
+        pass    
+    else:
+        y_speed = 0
     # note that this is "if" instead of "elif", because multiple can happen at the same time,
     # one doesn't exclude the following ones, like it did when we were looking at a single key
     # event at the same time.
