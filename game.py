@@ -1,5 +1,10 @@
 #!/usr/bin/env python3.8
 import pygame
+import pygame.display
+import pygame.freetype
+import pygame.image
+import pygame.mouse
+import pygame.time
 
 # Initialize pygame, so it can open a window and start listening for input.
 pygame.init()
@@ -25,6 +30,9 @@ y_speed = 0.0
 
 # Load the image of Boo we'll be displaying.
 boo_image = pygame.image.load("assets/boo.png").convert_alpha()
+
+# Load the font we'll use for text.
+font = pygame.freetype.SysFont(pygame.font.get_default_font(), 32)
 
 # Loop forever until we set running to False, when the user tries to exit.
 while running:
@@ -63,15 +71,23 @@ while running:
     if keys[pygame.K_DOWN] or keys[pygame.K_s]:
         y_speed += 256
 
-    # Update position using the speed (per second), divided by the number of frames per second.
+    # Update position using the speed in pixels per second),
+    # divided by the number of frames per second.
     x_position += x_speed / fps
     y_position += y_speed / fps
 
-    # Fill the background with white, overwriting the previous frame.
+    # Fill the background, overwriting the previous frame.
     if pygame.mouse.get_focused():
-        window.fill((255, 255, 255))
+        # white if mouse is over window
+        background_color = 255, 255, 255
     else:
-        window.fill((200, 200, 200))
+        # slightly grey if not
+        background_color = 225, 225, 255
+    window.fill(background_color)
+
+    text, dimensions = font.render("Boo!", (0, 0, 0))
+    text_position = 32, 32
+    window.blit(text, text_position)
 
     # Draw a Boo with the current position, color, and size.
     position = int(round(x_position)), int(round(y_position))
