@@ -47,9 +47,6 @@ while running:
         x_speed = -50
     else:  
         x_speed = 0
-    #if keys[pygame.K_LEFT] !=:
-        #x_speed = 0
-        #nopelol
     if keys[pygame.K_RIGHT]:
         x_speed = 50
     if x_speed < 0:
