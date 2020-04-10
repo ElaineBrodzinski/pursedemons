@@ -20,16 +20,16 @@ pygame.display.set_caption("Boo!")
 # We'll run until the user asks to quit.
 running = True
 
-# We adjust these variables to control the Boo we draw below.
+# We adjust these variables to control the player we draw below.
 x_position = 128.0
 y_position = 256.0
 
-# The amount to change the x and y positions of the Boo per second.
+# The amount to change the x and y positions of the player per second.
 x_speed = 0.0
 y_speed = 0.0
 
-# Load the image of Boo we'll be displaying.
-boo_image = pygame.image.load("assets/boo.png").convert_alpha()
+# Load the player image we'll be displaying.
+player_image = pygame.image.load("assets/illufinch/lepus-8-1a.png").convert_alpha()
 
 # Load the font we'll use for text.
 font = pygame.freetype.SysFont(pygame.font.get_default_font(), 32)
@@ -51,9 +51,9 @@ while running:
             break  # immediately jump out of loop
 
         if event.type == pygame.MOUSEMOTION:
-            # if you move mouse over the window, center Boo on it
-            x_position = event.pos[0] - boo_image.get_width() / 2
-            y_position = event.pos[1] - boo_image.get_height() / 2
+            # if you move mouse over the window, center the player on it
+            x_position = event.pos[0] - player_image.get_width() / 2
+            y_position = event.pos[1] - player_image.get_height() / 2
 
     keys = pygame.key.get_pressed()
     x_speed = 0.0
@@ -89,9 +89,9 @@ while running:
     text_position = 32, 32
     window.blit(text, text_position)
 
-    # Draw a Boo with the current position, color, and size.
+    # Draw the player with the current position, color, and size.
     position = int(round(x_position)), int(round(y_position))
-    window.blit(boo_image, position)
+    window.blit(player_image, position)
 
     # Take the new frame we've drawn and display it.
     pygame.display.flip()
