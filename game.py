@@ -1,4 +1,8 @@
 #!/usr/bin/env python3.8
+from glob import glob
+import random
+import math
+
 import pygame
 import pygame.display
 import pygame.freetype
@@ -29,7 +33,8 @@ x_speed = 0.0
 y_speed = 0.0
 
 # Load the player image we'll be displaying.
-player_image = pygame.image.load("assets/illufinch/lepus-8-1a.png").convert_alpha()
+all_images = glob("assets/*/*.png") + glob("assets/*.png")
+player_image = pygame.image.load(random.choice(all_images)).convert_alpha()
 
 # Load the font we'll use for text.
 font = pygame.freetype.SysFont(pygame.font.get_default_font(), 32)
@@ -54,6 +59,9 @@ while running:
             # if you move mouse over the window, center the player on it
             x_position = event.pos[0] - player_image.get_width() / 2
             y_position = event.pos[1] - player_image.get_height() / 2
+
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            player_image = pygame.image.load(random.choice(all_images)).convert_alpha()
 
     keys = pygame.key.get_pressed()
     x_speed = 0.0
