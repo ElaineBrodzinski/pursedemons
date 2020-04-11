@@ -58,7 +58,7 @@ while running:
     keys = pygame.key.get_pressed()
     x_speed = 0.0
     y_speed = 0.0
-    
+
     if keys[pygame.K_LEFT]:
         x_speed -= 50
     if keys[pygame.K_RIGHT]:
