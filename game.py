@@ -59,29 +59,17 @@ while running:
     x_speed = 0.0
     y_speed = 0.0
 
-    if keys[pygame.K_LEFT]:
-        x_speed -= 50
-    if keys[pygame.K_RIGHT]:
-        x_speed += 50
-    if keys[pygame.K_UP]:
-        y_speed -= 50
-    if keys[pygame.K_DOWN]:
-        y_speed += 50
-    # note that this is "if" instead of "elif", because multiple can happen at the same time,
-    # one doesn't exclude the following ones, like it did when we were looking at a single key
-    # event at the same time.
-
     if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-        x_speed -= 256
+        x_speed -= 256.0
 
     if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-        x_speed += 256
+        x_speed += 256.0
 
     if keys[pygame.K_UP] or keys[pygame.K_w]:
-        y_speed -= 256
+        y_speed -= 256.0
 
     if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-        y_speed += 256
+        y_speed += 256.0
 
     # Update position using the speed in pixels per second),
     # divided by the number of frames per second.
