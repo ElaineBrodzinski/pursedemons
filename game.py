@@ -68,16 +68,16 @@ while running:
     y_speed = 0.0
 
     if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-        x_speed -= 256
+        x_speed -= 256.0
 
     if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-        x_speed += 256
+        x_speed += 256.0
 
     if keys[pygame.K_UP] or keys[pygame.K_w]:
-        y_speed -= 256
+        y_speed -= 256.0
 
     if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-        y_speed += 256
+        y_speed += 256.0
 
     # Update position using the speed in pixels per second),
     # divided by the number of frames per second.
