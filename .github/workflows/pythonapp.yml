@@ -28,15 +28,15 @@ jobs:
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 --count --select=E9,F63,F7,F82 --show-source --statistics src
           # treat all others errors as warnings, and don't fail the check.
-          flake8 . --count --exit-zero --max-line-length=88 --statistics
+          flake8 --count --exit-zero --max-line-length=88 --statistics src
 
       - name: Check types with mypy, if present
-        run: mypy . --ignore-missing-imports
+        run: mypy --ignore-missing-imports src
 
       - name: Test with pytest, if present
         run: pytest --suppress-no-test-exit-code
 
       - name: Check formatting with black
-        run: black --check .
+        run: black --check src
