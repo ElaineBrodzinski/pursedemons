@@ -3,11 +3,7 @@
 
 name: Python application
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -15,25 +11,32 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
+
       - name: Upgrade pip
         run: |
           python -m pip install --upgrade pip
+
+      - name: Install other Python tools
+        run: |
+          pip install flake8 mypy pytest pytest-custom_exit_code black
+
       - name: Lint with flake8
         run: |
-          pip install flake8
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      - name: Check types with mypy
-        run: |
-          pip install mypy
-          mypy . --ignore-missing-imports
-      - name: Test with pytest
-        run: |
-          pip install pytest pytest-custom_exit_code
-          pytest --suppress-no-test-exit-code
+          # treat all others errors as warnings, and don't fail the check.
+          flake8 . --count --exit-zero --max-line-length=88 --statistics
+
+      - name: Check types with mypy, if present
+        run: mypy . --ignore-missing-imports
+
+      - name: Test with pytest, if present
+        run: pytest --suppress-no-test-exit-code
+
+      - name: Check formatting with black
+        run: black --check .
