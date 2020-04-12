@@ -13,8 +13,12 @@ pygame.init()
 clock = pygame.time.Clock()
 fps = 60
 
+#sets value of screen dimensions
+screen_width = int(768)
+screen_height = int(512)
+
 # Set up the window we'll be drawing in
-window = pygame.display.set_mode([768, 512])
+window = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Boo!")
 
 # We'll run until the user asks to quit.
@@ -59,18 +63,6 @@ while running:
     x_speed = 0.0
     y_speed = 0.0
 
-    if keys[pygame.K_LEFT]:
-        x_speed -= 50
-    if keys[pygame.K_RIGHT]:
-        x_speed += 50
-    if keys[pygame.K_UP]:
-        y_speed -= 50
-    if keys[pygame.K_DOWN]:
-        y_speed += 50
-    # note that this is "if" instead of "elif", because multiple can happen at the same time,
-    # one doesn't exclude the following ones, like it did when we were looking at a single key
-    # event at the same time.
-
     if keys[pygame.K_LEFT] or keys[pygame.K_a]:
         x_speed -= 256
 
@@ -82,7 +74,13 @@ while running:
 
     if keys[pygame.K_DOWN] or keys[pygame.K_s]:
         y_speed += 256
+``
+    if x_position >=  screen_width - 1:
+        x_position = 1
 
+    if x_position <= 1:
+        x_position = screen_width - 1 
+``
     # Update position using the speed in pixels per second),
     # divided by the number of frames per second.
     x_position += x_speed / fps
