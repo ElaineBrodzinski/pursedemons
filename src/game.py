@@ -15,6 +15,13 @@ from pygame import Surface, Rect
 
 import sprite_sheet
 
+
+def x2(sprite):
+    return pygame.transform.scale(
+        sprite, (sprite.get_rect().width * 2, sprite.get_rect().height * 2)
+    )
+
+
 # Initialize pygame, so it can open a window and start listening for input.
 pygame.init()
 
@@ -114,35 +121,36 @@ while running:
     for sprite in (
         sprites["Space"],
         sprites["Horizon"],
-        sprites["Floor"],
+        x2(sprites["Floor"]),
         sprites["Darkness"],
     ):
-        for x in range(0, 256 * 4, sprite.get_rect().width):
-            window.blit(sprite, (x, 0))
+        for x in range(-1, 256 * 4, sprite.get_rect().width):
+            r = sprite.get_rect()
+            r.center = (x, 128)
+            window.blit(sprite, r)
 
-    for (x, sprite) in zip(
-        count(),
-        (
-            sprites["Ursus 0"],
-            sprites["Ursus 1"],
-            sprites["Ursus 2"],
-            sprites["Ursus 3"],
-            sprites["Horribilis 0"],
-            sprites["Horribilis 1"],
-            sprites["Horribilis 2"],
-            sprites["Horribilis 3"],
-            sprites["Trophy 0"],
-            sprites["Little Magic 0"],
-            sprites["Little Magic 1"],
-            sprites["Little Magic 2"],
-            sprites["Lepus 8 0"],
-            sprites["Lepus 8 1"],
-            sprites["Lepus 8 2"],
-        ),
+    x = 0
+    for sprite in (
+        x2(sprites["Ursus 0"]),
+        x2(sprites["Ursus 1"]),
+        x2(sprites["Ursus 2"]),
+        x2(sprites["Ursus 3"]),
+        x2(sprites["Horribilis 0"]),
+        x2(sprites["Horribilis 1"]),
+        x2(sprites["Horribilis 2"]),
+        x2(sprites["Horribilis 3"]),
+        x2(sprites["Trophy 0"]),
+        x2(sprites["Little Magic 0"]),
+        x2(sprites["Little Magic 1"]),
+        x2(sprites["Little Magic 2"]),
+        x2(sprites["Lepus 8 0"]),
+        x2(sprites["Lepus 8 1"]),
+        x2(sprites["Lepus 8 2"]),
     ):
         r = sprite.get_rect()
-        r.center = (25 + x * 50, 128)
+        r.midleft = (x, 128)
         window.blit(sprite, r)
+        x += r.width + 1
 
     position = int(round(x_position)), int(round(y_position))
     window.blit(player_image, position)
