@@ -1,0 +1,3 @@
+class Surface:
+    def convert_alpha(self) -> Surface:
+        ...

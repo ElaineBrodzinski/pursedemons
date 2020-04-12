@@ -33,7 +33,7 @@ jobs:
           flake8 --count --exit-zero --max-line-length=88 --statistics src
 
       - name: Check types with mypy, if present
-        run: mypy --ignore-missing-imports src
+        run: mypy --ignore-missing-imports
 
       - name: Test with pytest, if present
         run: pytest --suppress-no-test-exit-code
