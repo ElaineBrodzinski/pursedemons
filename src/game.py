@@ -10,6 +10,8 @@ import pygame.image
 import pygame.mouse
 import pygame.time
 
+import sprite_loader
+
 # Initialize pygame, so it can open a window and start listening for input.
 pygame.init()
 
@@ -32,9 +34,11 @@ y_position = 256.0
 x_speed = 0.0
 y_speed = 0.0
 
+# Load our Finch sprite sheet.
+finch = sprite_loader.load("assets/finch/all")
+
 # Load the player image we'll be displaying.
-all_images = glob("assets/*/*.png") + glob("assets/*.png")
-player_image = pygame.image.load(random.choice(all_images)).convert_alpha()
+player_image = finch[random.choice(list(finch))]
 
 # Load the font we'll use for text.
 font = pygame.freetype.SysFont(pygame.font.get_default_font(), 32)
@@ -55,13 +59,13 @@ while running:
             running = False
             break  # immediately jump out of loop
 
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            player_image = finch[random.choice(list(finch))]
+
         if event.type == pygame.MOUSEMOTION:
             # if you move mouse over the window, center the player on it
             x_position = event.pos[0] - player_image.get_width() / 2
             y_position = event.pos[1] - player_image.get_height() / 2
-
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            player_image = pygame.image.load(random.choice(all_images)).convert_alpha()
 
     keys = pygame.key.get_pressed()
     x_speed = 0.0
