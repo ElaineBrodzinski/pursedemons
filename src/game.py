@@ -111,7 +111,12 @@ while running:
     window.blit(text, text_position)
 
     # Draw background layers
-    for sprite in (sprites["Space"], sprites["Floor"], sprites["Darkness"]):
+    for sprite in (
+        sprites["Space"],
+        sprites["Horizon"],
+        sprites["Floor"],
+        sprites["Darkness"],
+    ):
         for x in range(0, 256 * 4, sprite.get_rect().width):
             window.blit(sprite, (x, 0))
 
