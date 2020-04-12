@@ -7,7 +7,7 @@ import pygame.image
 from pygame import Surface, Rect
 
 
-class SpriteLoader(Mapping[str, Surface]):
+class SpriteSheet(Mapping[str, Surface]):
     _path: str
     _meta: Dict[str, Surface]
     _image: Surface
@@ -29,9 +29,9 @@ class SpriteLoader(Mapping[str, Surface]):
         }
 
     def __getitem__(self, key: str) -> Surface:
-        for key in (key, f"{key} 1"):
-            if key in self._sprites:
-                return self._sprites[key]
+        for potential_key in (key, f"{key} 0", f"{key} 1"):
+            if potential_key in self._sprites:
+                return self._sprites[potential_key]
         return self._sprites[key]
 
     def __iter__(self):
@@ -41,5 +41,5 @@ class SpriteLoader(Mapping[str, Surface]):
         return len(self._sprites)
 
 
-def load(path: str) -> SpriteLoader:
-    return SpriteLoader(path)
+def load(path: str) -> SpriteSheet:
+    return SpriteSheet(path)

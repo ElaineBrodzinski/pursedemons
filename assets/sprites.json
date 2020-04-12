@@ -1,11 +1,19 @@
 { "frames": {
+   "Horizon 0": {
+    "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 32000
+   },
    "Horizon 1": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Horizon 2": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -13,7 +21,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Horizon 3": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -21,247 +29,247 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Horizon 4": {
-    "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
+   "Space 0": {
+    "frame": { "x": 256, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
+   },
+   "Floor 0": {
+    "frame": { "x": 512, "y": 0, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 32000
    },
    "Floor 1": {
-    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
+    "frame": { "x": 512, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Floor 2": {
-    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
+    "frame": { "x": 512, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Floor 3": {
-    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
+    "frame": { "x": 512, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Floor 4": {
-    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
+   "Darkness 0": {
+    "frame": { "x": 768, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Darkness 1": {
-    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
+    "frame": { "x": 768, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Darkness 2": {
-    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
+    "frame": { "x": 768, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Darkness 3": {
-    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
+    "frame": { "x": 768, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Darkness 4": {
-    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
+   "Trophy 0": {
+    "frame": { "x": 1024, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Trophy 1": {
-    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
+    "frame": { "x": 1024, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Trophy 2": {
-    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
+    "frame": { "x": 1024, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Trophy 3": {
-    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
+    "frame": { "x": 1024, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Trophy 4": {
-    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
+   "Horribilis 0": {
+    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Dark (Alt) 1": {
-    "frame": { "x": 0, "y": 1024, "w": 256, "h": 256 },
+   "Horribilis 1": {
+    "frame": { "x": 256, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Dark (Alt) 2": {
-    "frame": { "x": 256, "y": 1024, "w": 256, "h": 256 },
+   "Horribilis 2": {
+    "frame": { "x": 512, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Dark (Alt) 3": {
-    "frame": { "x": 512, "y": 1024, "w": 256, "h": 256 },
+   "Horribilis 3": {
+    "frame": { "x": 768, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Dark (Alt) 4": {
-    "frame": { "x": 768, "y": 1024, "w": 256, "h": 256 },
+   "Ursus 0": {
+    "frame": { "x": 1024, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Light (Primary) 1": {
-    "frame": { "x": 0, "y": 1280, "w": 256, "h": 256 },
+   "Ursus 1": {
+    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Light (Primary) 2": {
-    "frame": { "x": 256, "y": 1280, "w": 256, "h": 256 },
+   "Ursus 2": {
+    "frame": { "x": 256, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Light (Primary) 3": {
-    "frame": { "x": 512, "y": 1280, "w": 256, "h": 256 },
+   "Ursus 3": {
+    "frame": { "x": 512, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Light (Primary) 4": {
-    "frame": { "x": 768, "y": 1280, "w": 256, "h": 256 },
+   "Lepus 8 0": {
+    "frame": { "x": 768, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Lepus 8 1": {
-    "frame": { "x": 0, "y": 1536, "w": 256, "h": 256 },
+    "frame": { "x": 1024, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Lepus 8 2": {
-    "frame": { "x": 256, "y": 1536, "w": 256, "h": 256 },
+    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Lepus 8 3": {
-    "frame": { "x": 512, "y": 1536, "w": 256, "h": 256 },
+    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
-   "Lepus 8 4": {
-    "frame": { "x": 512, "y": 1536, "w": 256, "h": 256 },
+   "Little Magic 0": {
+    "frame": { "x": 256, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Little Magic 1": {
-    "frame": { "x": 0, "y": 1792, "w": 256, "h": 256 },
+    "frame": { "x": 512, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Little Magic 2": {
-    "frame": { "x": 256, "y": 1792, "w": 256, "h": 256 },
+    "frame": { "x": 768, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    },
    "Little Magic 3": {
-    "frame": { "x": 512, "y": 1792, "w": 256, "h": 256 },
+    "frame": { "x": 768, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
-   },
-   "Little Magic 4": {
-    "frame": { "x": 512, "y": 1792, "w": 256, "h": 256 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
-    "sourceSize": { "w": 256, "h": 256 },
-    "duration": 250
+    "duration": 32000
    }
  },
  "meta": {
   "app": "http://www.aseprite.org/",
   "version": "1.2.17-x64",
-  "image": "all.png",
+  "image": "sprites.png",
   "format": "RGBA8888",
-  "size": { "w": 1024, "h": 2048 },
+  "size": { "w": 1280, "h": 1024 },
   "scale": "1"
  }
 }
