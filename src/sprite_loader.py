@@ -29,6 +29,9 @@ class SpriteLoader(Mapping[str, Surface]):
         }
 
     def __getitem__(self, key: str) -> Surface:
+        for key in (key, f"{key} 1"):
+            if key in self._sprites:
+                return self._sprites[key]
         return self._sprites[key]
 
     def __iter__(self):

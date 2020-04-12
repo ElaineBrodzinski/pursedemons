@@ -1,5 +1,5 @@
 { "frames": {
-   "Trophy 1": {
+   "Horizon 1": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -7,7 +7,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Trophy 2": {
+   "Horizon 2": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -15,7 +15,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Trophy 3": {
+   "Horizon 3": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -23,7 +23,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Trophy 4": {
+   "Horizon 4": {
     "frame": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -31,7 +31,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Dark (Alt) 1": {
+   "Floor 1": {
     "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -39,31 +39,31 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Dark (Alt) 2": {
-    "frame": { "x": 256, "y": 256, "w": 256, "h": 256 },
+   "Floor 2": {
+    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Dark (Alt) 3": {
-    "frame": { "x": 512, "y": 256, "w": 256, "h": 256 },
+   "Floor 3": {
+    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Dark (Alt) 4": {
-    "frame": { "x": 768, "y": 256, "w": 256, "h": 256 },
+   "Floor 4": {
+    "frame": { "x": 0, "y": 256, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Light (Primary) 1": {
+   "Darkness 1": {
     "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -71,31 +71,31 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Light (Primary) 2": {
-    "frame": { "x": 256, "y": 512, "w": 256, "h": 256 },
+   "Darkness 2": {
+    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Light (Primary) 3": {
-    "frame": { "x": 512, "y": 512, "w": 256, "h": 256 },
+   "Darkness 3": {
+    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Light (Primary) 4": {
-    "frame": { "x": 768, "y": 512, "w": 256, "h": 256 },
+   "Darkness 4": {
+    "frame": { "x": 0, "y": 512, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Lepus 8 1": {
+   "Trophy 1": {
     "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -103,31 +103,31 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Lepus 8 2": {
-    "frame": { "x": 256, "y": 768, "w": 256, "h": 256 },
+   "Trophy 2": {
+    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Lepus 8 3": {
-    "frame": { "x": 512, "y": 768, "w": 256, "h": 256 },
+   "Trophy 3": {
+    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Lepus 8 4": {
-    "frame": { "x": 512, "y": 768, "w": 256, "h": 256 },
+   "Trophy 4": {
+    "frame": { "x": 0, "y": 768, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Little Magic 1": {
+   "Dark (Alt) 1": {
     "frame": { "x": 0, "y": 1024, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -135,7 +135,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Little Magic 2": {
+   "Dark (Alt) 2": {
     "frame": { "x": 256, "y": 1024, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -143,7 +143,7 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
-   "Little Magic 3": {
+   "Dark (Alt) 3": {
     "frame": { "x": 512, "y": 1024, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
@@ -151,8 +151,104 @@
     "sourceSize": { "w": 256, "h": 256 },
     "duration": 250
    },
+   "Dark (Alt) 4": {
+    "frame": { "x": 768, "y": 1024, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Light (Primary) 1": {
+    "frame": { "x": 0, "y": 1280, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Light (Primary) 2": {
+    "frame": { "x": 256, "y": 1280, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Light (Primary) 3": {
+    "frame": { "x": 512, "y": 1280, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Light (Primary) 4": {
+    "frame": { "x": 768, "y": 1280, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Lepus 8 1": {
+    "frame": { "x": 0, "y": 1536, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Lepus 8 2": {
+    "frame": { "x": 256, "y": 1536, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Lepus 8 3": {
+    "frame": { "x": 512, "y": 1536, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Lepus 8 4": {
+    "frame": { "x": 512, "y": 1536, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Little Magic 1": {
+    "frame": { "x": 0, "y": 1792, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Little Magic 2": {
+    "frame": { "x": 256, "y": 1792, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
+   "Little Magic 3": {
+    "frame": { "x": 512, "y": 1792, "w": 256, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 250
+   },
    "Little Magic 4": {
-    "frame": { "x": 512, "y": 1024, "w": 256, "h": 256 },
+    "frame": { "x": 512, "y": 1792, "w": 256, "h": 256 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -165,7 +261,7 @@
   "version": "1.2.17-x64",
   "image": "all.png",
   "format": "RGBA8888",
-  "size": { "w": 1024, "h": 1280 },
+  "size": { "w": 1024, "h": 2048 },
   "scale": "1"
  }
 }
