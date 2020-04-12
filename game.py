@@ -13,7 +13,7 @@ pygame.init()
 clock = pygame.time.Clock()
 fps = 60
 
-#sets value of screen dimensions
+# sets value of screen dimensions
 screen_width = int(768)
 screen_height = int(512)
 
@@ -74,13 +74,13 @@ while running:
 
     if keys[pygame.K_DOWN] or keys[pygame.K_s]:
         y_speed += 256
-``
-    if x_position >=  screen_width - 1:
+
+    if x_position >= screen_width - 1:
         x_position = 1
 
     if x_position <= 1:
-        x_position = screen_width - 1 
-``
+        x_position = screen_width - 1
+
     # Update position using the speed in pixels per second),
     # divided by the number of frames per second.
     x_position += x_speed / fps
