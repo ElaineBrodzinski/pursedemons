@@ -13,7 +13,7 @@ import pygame.mouse
 import pygame.time
 from pygame import Surface, Rect
 
-import sprite_sheet
+from . import sprite_sheet
 
 
 def x2(sprite):
@@ -55,7 +55,7 @@ player_image = sprites[
 ]
 
 # Load the font we'll use for text.
-font = pygame.freetype.SysFont(pygame.font.get_default_font(), 32)
+font = pygame.freetype.SysFont(pygame.freetype.get_default_font(), 32)
 
 # Loop forever until we set running to False, when the user tries to exit.
 while running:

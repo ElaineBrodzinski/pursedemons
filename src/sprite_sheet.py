@@ -40,7 +40,7 @@ def trim_preserving_center(surface: Surface) -> Surface:
 
     if trim_x or trim_y:
         surface = surface.subsurface(
-            (trim_x, trim_y), (width - trim_x * 2, height - trim_y * 2)
+            Rect((trim_x, trim_y), (width - trim_x * 2, height - trim_y * 2))
         )
 
     return surface
@@ -48,7 +48,7 @@ def trim_preserving_center(surface: Surface) -> Surface:
 
 class SpriteSheet(Mapping[str, Surface]):
     _path: str
-    _meta: Dict[str, Surface]
+    _meta: Dict[str, Dict[str, Any]]
     _image: Surface
     _sprites: Dict[str, Surface]
 
