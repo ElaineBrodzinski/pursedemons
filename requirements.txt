@@ -1,2 +1,4 @@
-pygame
+black
+flake8
 mypy
+pygame
