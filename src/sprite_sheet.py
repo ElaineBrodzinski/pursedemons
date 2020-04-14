@@ -6,6 +6,7 @@ import pygame
 import pygame.image
 from pygame import Surface, Rect
 
+
 class SpriteSheet(Mapping[str, Surface]):
     _path: str
     _meta: Dict[str, Dict[str, Any]]

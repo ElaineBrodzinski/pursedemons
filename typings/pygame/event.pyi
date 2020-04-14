@@ -1,3 +1,4 @@
-from typing import Any
+from typing import Any, List
 
-def get() -> Any: ...
+def get() -> List[Any]:
+    """get events from the queue"""

@@ -1,7 +1,19 @@
-from typing import List
+from typing import Tuple, Optional
 
-def set_mode(mode: List[int]): ...
+from .surface import Surface
 
-def set_caption(caption: str): ...
+def set_mode(size: Tuple[int, int] = (0, 0)) -> Surface:
+    """Initialize a window or screen for display
+    """
 
-def flip(): ...
+def get_surface() -> Optional[Surface]:
+    """Get a reference to the currently set display surface
+    """
+
+def set_caption(caption: str) -> None:
+    """Set the current window caption
+    """
+
+def flip() -> None:
+    """Update the full display Surface to the screen
+    """
