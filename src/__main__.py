@@ -23,17 +23,17 @@ class Game:
 
         self._surface = pygame.display.set_mode((256 * 4, 256))
         self._clock = pygame.time.Clock()
-        self._fps = 30
+        self._fps = 4
         self._sprites = sprite_sheet.load("assets/sprites")
-        self._backgrounds = [self._sprites["Wood Tile"]]
+        self._backgrounds = []
 
         pygame.display.set_caption("banksrupt")
 
     def run(self) -> typing.NoReturn:
+
         while True:
             self._clock.tick(self._fps)
 
-            # Loop over every input or event that has happened since the last frame.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT or (
                     event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
@@ -44,8 +44,14 @@ class Game:
 
             self._surface.fill((150, 50, 100))
 
-            for background in self._backgrounds:
-                background.tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Wood Tile"].tile_on(self._surface)
+            self._sprites["Stone Block"].tile_on(self._surface, interval=(16, 16))
 
             pygame.display.flip()
 

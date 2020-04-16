@@ -35,7 +35,6 @@ class Surface:
     def blit(self, source: Surface, dest: Rect) -> Rect:
         """draw one image onto another
         """
-    
     def fill(self, color: Tuple[int, int, int]):
         """fill Surface with a solid color
         """

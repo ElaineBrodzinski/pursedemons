@@ -1,4 +1,4 @@
-from typing import Any, Mapping, Dict, Tuple
+from typing import Any, Mapping, Dict, Tuple, Optional
 import os.path
 import json
 
@@ -11,22 +11,21 @@ class Sprite(Surface):
     def trim(self) -> "Sprite":
         return self.subsurface(self.get_bounding_rect())
 
-    def tile_on(self, target: Surface, offset: Tuple[int, int] = (0, 0)):
+    def tile_on(
+        self, target: Surface, *, interval: Optional[Tuple[int, int]] = None,
+    ):
         tile_width, tile_height = self.get_size()
         target_width, target_height = target.get_size()
-        x_offset, y_offset = offset
 
-        x_offset = x_offset % tile_width
-        y_offset = y_offset % tile_height
+        interval_x, interval_y = interval if interval else (tile_width, tile_height)
 
-        initial_x = (-tile_width + x_offset) if x_offset > 0 else 0
-        initial_y = (-tile_height + y_offset) if y_offset > 0 else 0
-
-        for x in range(initial_x, target_width, tile_width):
-            for y in range(initial_y, target_height, tile_height):
-                r = self.get_rect()
-                r.topleft = (x, y)
-                target.blit(self, r)
+        for x in range(0, target_width, interval_x):
+            for y in range(0, target_height, interval_y):
+                if __import__("random").random() < (x / target_width):
+                    # print(
+                    #     f"{target}.blit({self}, Rect({x}, {y}, {tile_width}, {tile_height}))"
+                    # )
+                    target.blit(self, Rect(x, y, tile_width, tile_height))
 
 
 class SpriteSheet(Mapping[str, Sprite]):
@@ -49,6 +48,7 @@ class SpriteSheet(Mapping[str, Sprite]):
             sprite = self._image.subsurface(
                 Rect(frame["x"], frame["y"], frame["w"], frame["h"],)
             )
+            print(self._image, name, sprite)
             self._sprites[name] = sprite
 
     def __getitem__(self, key: str) -> Sprite:

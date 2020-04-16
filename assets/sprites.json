@@ -224,7 +224,7 @@
     "duration": 200
    },
    "Wood Tile 0": {
-    "frame": { "x": 583, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 42, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 128, "y": 112, "w": 16, "h": 16 },
@@ -232,7 +232,7 @@
     "duration": 200
    },
    "Wood Tile 1": {
-    "frame": { "x": 583, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 42, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -240,7 +240,7 @@
     "duration": 200
    },
    "Wood Tile 2": {
-    "frame": { "x": 583, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 42, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -248,39 +248,7 @@
     "duration": 200
    },
    "Wood Tile 3": {
-    "frame": { "x": 583, "y": 108, "w": 16, "h": 16 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
-    "sourceSize": { "w": 256, "h": 256 },
-    "duration": 200
-   },
-   "Stone Block 0": {
-    "frame": { "x": 756, "y": 42, "w": 16, "h": 22 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 128, "y": 106, "w": 16, "h": 22 },
-    "sourceSize": { "w": 256, "h": 256 },
-    "duration": 200
-   },
-   "Stone Block 1": {
-    "frame": { "x": 756, "y": 42, "w": 16, "h": 22 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
-    "sourceSize": { "w": 256, "h": 256 },
-    "duration": 200
-   },
-   "Stone Block 2": {
-    "frame": { "x": 756, "y": 42, "w": 16, "h": 22 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
-    "sourceSize": { "w": 256, "h": 256 },
-    "duration": 200
-   },
-   "Stone Block 3": {
-    "frame": { "x": 756, "y": 42, "w": 16, "h": 22 },
+    "frame": { "x": 756, "y": 42, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -288,7 +256,7 @@
     "duration": 200
    },
    "Farmy 0": {
-    "frame": { "x": 602, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 61, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": true,
     "spriteSourceSize": { "x": 128, "y": 112, "w": 16, "h": 16 },
@@ -296,7 +264,7 @@
     "duration": 200
    },
    "Farmy 1": {
-    "frame": { "x": 602, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 61, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -304,7 +272,7 @@
     "duration": 200
    },
    "Farmy 2": {
-    "frame": { "x": 602, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 61, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
@@ -312,7 +280,39 @@
     "duration": 200
    },
    "Farmy 3": {
-    "frame": { "x": 602, "y": 108, "w": 16, "h": 16 },
+    "frame": { "x": 756, "y": 61, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "Stone Block 0": {
+    "frame": { "x": 583, "y": 108, "w": 17, "h": 22 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 128, "y": 106, "w": 17, "h": 22 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "Stone Block 1": {
+    "frame": { "x": 583, "y": 108, "w": 17, "h": 22 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "Stone Block 2": {
+    "frame": { "x": 583, "y": 108, "w": 17, "h": 22 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
+    "sourceSize": { "w": 256, "h": 256 },
+    "duration": 200
+   },
+   "Stone Block 3": {
+    "frame": { "x": 583, "y": 108, "w": 17, "h": 22 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 256, "h": 256 },
