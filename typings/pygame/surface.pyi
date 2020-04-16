@@ -1,12 +1,17 @@
-from typing import Tuple, Optional
+from typing import Tuple, Optional, TypeVar
 
 from .rect import Rect
 
+SurfaceT = TypeVar('SurfaceT', bound='Surface')
 class Surface:
     """pygame object for representing images
     """
-
-    def convert_alpha(self) -> Surface:
+    def __init__(self, size: Tuple[int, int]):
+        ...
+    def get_bounding_rect(self, min_alpha: float = 1) -> Rect:
+        """find the smallest rect containing data
+        """
+    def convert_alpha(self: SurfaceT) -> SurfaceT:
         """change the pixel format of an image including per pixel alphas
         """
     def get_rect(self) -> Rect:
@@ -18,10 +23,13 @@ class Surface:
     def get_height(self) -> int:
         """get the height of the Surface
         """
+    def get_size(self) -> Tuple[int, int]:
+        """get the dimensions of the Surface
+        """
     def get_at(self, top_left: Tuple[int, int]) -> Color:
         """get the color value at a single pixel
         """
-    def subsurface(self, rect: Rect) -> Surface:
+    def subsurface(self: SurfaceT, rect: Rect) -> SurfaceT:
         """create a new surface that references its parent
         """
     def blit(self, source: Surface, dest: Rect) -> Rect:
