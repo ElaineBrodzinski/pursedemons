@@ -29,22 +29,26 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
     print("--- THE JUDGE'S SCORECARDS ---")
     print(f"red: {red}")
     print(f"blue: {blue}")
-    
 
 class Unit:
     hp: int
     max_hp: int
     attack: int
+
     def attack_other(self, other_unit: 'Unit'):
         print(f"{self} is attacking {other_unit}.")
-        other_unit.hp -= self.attack
+        damage = self.attack
+        if random.randint(1, 100) <= 5:
+            print("It's a critical hit!")
+            damage = damage * 2
+        other_unit.hp -= damage
         if other_unit.hp <= 0:
             print(f"{other_unit} has been killed by {self}.")
             other_unit.hp = 0
 
 class Battlecruiser(Unit):
     def __init__(self):
-        self.max_hp = 200
+        self.max_hp = 10000
         self.hp = self.max_hp
         self.attack = 40
 
@@ -53,7 +57,7 @@ class Battlecruiser(Unit):
 
 class Baneling(Unit):
     def __init__(self):
-        self.max_hp = 400
+        self.max_hp = 10000
         self.hp = self.max_hp
         self.attack = 40
 
