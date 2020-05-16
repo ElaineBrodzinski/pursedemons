@@ -30,13 +30,6 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
     print(f"red: {red}")
     print(f"blue: {blue}")
     
-    #So, ideally, you want each player to get a turn to get off an attack.
-    #Depends on if we want dps to be a factor or not. Like a baneling can attack
-    #every turn, maybe battlecruiser every other turn. 
-    #MORTAL STARCRAFT
-
-
-
 
 class Unit:
     hp: int
