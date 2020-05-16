@@ -25,6 +25,7 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
 
         attack_second.attack_other(attack_first)
 
+
     print()
     print("--- THE JUDGE'S SCORECARDS ---")
     print(f"red: {red}")
