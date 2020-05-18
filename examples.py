@@ -1,9 +1,18 @@
 #!/usr/bin/env python3.6
 import random
+import time
+
+"""
+TASK BINGO-BONGO-99:
+- Mark units as Air or Ground.
+- Mark attacks as Air or Ground or Both.
+- Give units multiple attacks, which may be different for air and ground.
+- Make units pick attacks based on which is more powerful.
+"""
 
 def main():
-    kerrigan = Baneling("Kerrigan")
-    arthas = Battlecruiser("Arthas")
+    kerrigan = Corrupter()
+    arthas = Marine()
     fight_to_the_death(kerrigan, arthas)
 
 
@@ -11,8 +20,26 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
     print("Today! Fighting to the death, for your entertainment, we have.")
     print(f"In the red corner: {red}")
     print(f"In the blue corner: {blue}")
+    
+    if red.attack_range == "universal":
+        pass
+    else:
+        if red.attack_range == "air" and blue.position == "ground":
+            red.attack = 0 
+        if red.attack_range == "ground" and blue.position == "air":
+            red.attack = 0
+    
+    if blue.attack_range == "universal":
+        pass
+    else:
+        if blue.attack_range == "air" and red.position == "ground":
+            blue.attack = 0 
+        if blue.attack_range == "ground" and red.position == "air":
+            blue.attack = 0
 
     while red.hp > 0  and blue.hp > 0:
+        time.sleep(0.25)
+
         if red.base_speed > blue.base_speed:
             attack_first = red
         elif blue.base_speed > red.base_speed:
@@ -32,6 +59,8 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
 
         attack_second.attack_other(attack_first)
 
+
+
     print()
     print("--- THE JUDGE'S SCORECARDS ---")
     print(f"red: {red}")
@@ -43,6 +72,8 @@ class Unit:
     attack: int
     base_speed: int
     nickname: str
+    position: str
+    attack_range: str
     
     def __init__(self, nickname: str = None):
         self.hp = self.max_hp
@@ -70,17 +101,30 @@ class Unit:
 class Battlecruiser(Unit):
     max_hp = 1000
     attack = 40
+    attack_range = "universal"
     base_speed = 1
+    position = "air"
 
 class Baneling(Unit):
     max_hp = 10000
     attack = 40
+    attack_range = "ground"
     base_speed = 400
+    position = "ground"
 
 class Marine(Unit):
     max_hp = 40
     attack = 8
+    attack_range = "universal"
     base_speed = 100
+    position = "ground"
+
+class Corrupter(Unit):
+    max_hp = 150
+    attack = 30
+    attack_range = "air"
+    base_speed = 50
+    position = "air"
     
 if __name__ == "__main__":
     main()
