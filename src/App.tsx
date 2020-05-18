@@ -1,7 +1,6 @@
 import React from "react";
 
 import { print } from "./common";
-import { Demon } from "./demon";
 
 export class App {
   /// Initialize the application.
@@ -11,6 +10,8 @@ export class App {
 
   /// Run the application.
   async main() {
+    print(<img src="/prdm/96/front.png" alt="Tagger" />);
+
     for (let x = 0; x < 10; x += 2) {
       print("Hello world!", { x, y: x });
     }
@@ -22,10 +23,6 @@ export class App {
       <div>
         <p>
           You may want to press <kbd>F12</kbd> to open your developer console.
-        </p>
-
-        <p>
-          <Demon id={96} />
         </p>
       </div>
     );

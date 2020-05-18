@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 export const print = (...values: Array<any>) => {
+  console.log(...values);
+
   const output = document.createElement("p");
+  output.classList.add("printed");
 
   for (const value of values) {
     if (
-      value instanceof React.Component ||
+      React.isValidElement(value) ||
       typeof value === "string" ||
       typeof value === "number"
     ) {
