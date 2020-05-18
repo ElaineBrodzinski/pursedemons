@@ -3,6 +3,8 @@ import random
 import time
 
 """
+TODO: delete this file 
+
 TASK BINGO-BONGO-99:
 - Mark units as Air or Ground.
 - Mark attacks as Air or Ground or Both.

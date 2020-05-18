@@ -28,8 +28,8 @@ export class App {
       <>
         <p>
           <img
-            className={css({ height: 32 })}
-            src="/prdm/96/front.png"
+            className={css({ height: 64 })}
+            src="/prdm/096-tagger/front.png"
             alt="Tagger, Purse Demon #96"
           />{" "}
           Tagger with 10/10 HP.
@@ -37,11 +37,11 @@ export class App {
 
         <p>
           <img
-            className={css({ height: 32 })}
-            src="/prdm/96/front-sparklie.png"
-            alt="Sparklie Tagger, Purse Demon #96"
+            className={css({ height: 64 })}
+            src="/prdm/111-ursa/front.png"
+            alt="Ursa, Purse Demon #111"
           />{" "}
-          Sparklie Tagger with 11/11 HP.
+          Ursa with 11/11 HP.
         </p>
       </>
     );
