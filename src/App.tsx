@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
+import { css } from "otion";
 
-function App() {
-  return (
-    <div>
-      hello world
-    </div>
-  );
-}
+const App: React.FC = () => {
+  return <p className={css({ color: "blue" })}>I am blue</p>;
+};
 
 export default App;
