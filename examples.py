@@ -59,16 +59,6 @@ class Unit:
     nickname: str
     position: str
     attack_range: str
-
-class Attack:
-    rc_attack:
-    ability1:
-    ability2:
-    ability3:
-
-
-
-
     
     def __init__(self, nickname: str = None):
         self.hp = self.max_hp
