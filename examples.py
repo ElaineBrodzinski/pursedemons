@@ -2,17 +2,8 @@
 import random
 
 def main():
-    """
-    Task BINGO-26:
-    - give each unit a speed
-    - faster unit attacks first
-    - if the speed is tied, then decide randomly like we currently do.
-    Task BINGO-29:
-    - give each *instance* of a unit a distinct name, optionally. like in pokemon.
-    """
-
-    kerrigan = Baneling()
-    arthas = Battlecruiser()
+    kerrigan = Baneling("Kerrigan")
+    arthas = Battlecruiser("Arthas")
     fight_to_the_death(kerrigan, arthas)
 
 
@@ -51,6 +42,17 @@ class Unit:
     max_hp: int
     attack: int
     base_speed: int
+    nickname: str
+    
+    def __init__(self, nickname: str = None):
+        self.hp = self.max_hp
+
+        if nickname is None:
+            nickname = type(self).__name__
+        self.nickname = nickname
+
+    def __str__(self):
+        return f"<{self.nickname} {self.hp}/{self.max_hp} HP, {self.attack} attack>" 
 
     def attack_other(self, other_unit: 'Unit'):
         """Have this unit do an attack, reducing the HP of another unit."""
@@ -66,34 +68,19 @@ class Unit:
             other_unit.hp = 0
 
 class Battlecruiser(Unit):
-    def __init__(self):
-        self.max_hp = 1000
-        self.hp = self.max_hp
-        self.attack = 40
-        self.base_speed = 1
-
-    def __str__(self):
-        return f"<Battlecruiser {self.hp}/{self.max_hp} HP, {self.attack} attack>" 
+    max_hp = 1000
+    attack = 40
+    base_speed = 1
 
 class Baneling(Unit):
-    def __init__(self):
-        self.max_hp = 10000
-        self.hp = self.max_hp
-        self.attack = 40
-        self.base_speed = 400
-
-    def __str__(self):
-        return f"<Baneling {self.hp}/{self.max_hp} HP, {self.attack} attack>"
+    max_hp = 10000
+    attack = 40
+    base_speed = 400
 
 class Marine(Unit):
-    def __init__(self):
-        self.max_hp = 40
-        self.hp = self.max_hp
-        self.attack = 8
-        self.base_speed = 100
+    max_hp = 40
+    attack = 8
+    base_speed = 100
     
-    def __str__(self):
-        return f"<Marine {self.hp}/{self.max_hp} HP, {self.attack} attack>"
-
 if __name__ == "__main__":
     main()
