@@ -6,7 +6,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "eslint": "6",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "git rm -rf build; rm -rf build; react-scripts build && git add --force build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,11 +27,7 @@
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 firefox version"
     ]
-  },
-  "devDependencies": {
-    "prettier": "^2.0.5"
   }
 }

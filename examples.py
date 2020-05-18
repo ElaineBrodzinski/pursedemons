@@ -20,22 +20,7 @@ def fight_to_the_death(red: 'Unit', blue: 'Unit'):
     print("Today! Fighting to the death, for your entertainment, we have.")
     print(f"In the red corner: {red}")
     print(f"In the blue corner: {blue}")
-    
-    if red.attack_range == "universal":
-        pass
-    else:
-        if red.attack_range == "air" and blue.position == "ground":
-            red.attack = 0 
-        if red.attack_range == "ground" and blue.position == "air":
-            red.attack = 0
-    
-    if blue.attack_range == "universal":
-        pass
-    else:
-        if blue.attack_range == "air" and red.position == "ground":
-            blue.attack = 0 
-        if blue.attack_range == "ground" and red.position == "air":
-            blue.attack = 0
+
 
     while red.hp > 0  and blue.hp > 0:
         time.sleep(0.25)
@@ -74,6 +59,16 @@ class Unit:
     nickname: str
     position: str
     attack_range: str
+
+class Attack:
+    rc_attack:
+    ability1:
+    ability2:
+    ability3:
+
+
+
+
     
     def __init__(self, nickname: str = None):
         self.hp = self.max_hp
@@ -90,6 +85,26 @@ class Unit:
 
         print(f"{self} is attacking {other_unit}.")
         damage = self.attack
+
+
+        # like here
+            
+        if self.attack_range == "universal":
+            pass
+        else:
+            if self.attack_range == "air" and other_unit.position == "ground":
+                self.attack = 0 
+            if self.attack_range == "ground" and other_unit.position == "air":
+                self.attack = 0
+        
+        if other_unit.attack_range == "universal":
+            pass
+        else:
+            if other_unit.attack_range == "air" and self.position == "ground":
+                other_unit.attack = 0 
+            if other_unit.attack_range == "ground" and self.position == "air":
+                other_unit.attack = 0
+
         if random.randint(1, 100) <= 5:
             print("It's a critical hit!")
             damage = damage * 2
