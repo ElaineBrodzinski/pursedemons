@@ -1,3 +1,34 @@
 {
-    "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ab307e",
+    "activityBar.activeBorder": "#25320e",
+    "activityBar.background": "#ab307e",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#25320e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#832561",
+    "statusBar.border": "#832561",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#ab307e",
+    "titleBar.activeBackground": "#832561",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.border": "#832561",
+    "titleBar.inactiveBackground": "#83256199",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  } },
+  "peacock.color": "#215732",
+  "problems.showCurrentInStatus": true,
+  "files.exclude": {
+    "*/__pycache__": true,
+    ".flake8": true,
+    ".github": true,
+    ".gitignore": true,
+    ".mypy_cache": true,
+    ".pytest_cache": true,
+    ".vscode": true,
+    "LICENSE": true,
+    "mypy.ini": true
+  }
 }
