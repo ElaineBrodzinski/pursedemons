@@ -30,5 +30,8 @@
     ".vscode": true,
     "LICENSE": true,
     "mypy.ini": true
-  }
+  },
+  "cSpell.words": [
+    "otion"
+  ]
 }
