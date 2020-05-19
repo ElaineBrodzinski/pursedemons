@@ -29,20 +29,9 @@ export class App {
 
     return (
       <>
-        <p>
-          <DemonImage
-            name="Tagger"
-            number={96}
-            onClick={() => print("rawr!")}
-          />{" "}
-          {this.ourDemon.nickname} with {this.ourDemon.hp}/{this.ourDemon.maxHp}{" "}
-          HP.
-        </p>
+        <p>{this.theirDemon.renderCard()}</p>
 
-        <p>
-          <DemonImage name="Ursa" number={111} /> {this.theirDemon.nickname}{" "}
-          with {this.theirDemon.hp}/{this.theirDemon.maxHp} HP.
-        </p>
+        <p>{this.ourDemon.renderCard()}</p>
       </>
     );
   }
@@ -98,18 +87,78 @@ abstract class Unit {
   range: string;
 
   [print.as]() {
+    return this.renderCard();
+  }
+
+  renderCard() {
+    const vitality = this.hp / this.maxHp;
+    const color =
+      vitality >= 1.0
+        ? "#DFE"
+        : vitality >= 0.8
+        ? "#8DA"
+        : vitality >= 0.4
+        ? "#DA4"
+        : vitality >= 0.3
+        ? "#CDA"
+        : vitality > 0
+        ? "#F00"
+        : "#202";
     return (
       <span
         className={css({
           padding: 4,
           borderRadius: 4,
           border: "1px solid #888",
+          width: 256,
+          position: "relative",
         })}
       >
-        <DemonImage name="Tagger" number={96} /> {this.nickname}{" "}
-        <b>
+        <DemonImage name="Tagger" number={96} />{" "}
+        <span
+          className={css({
+            display: "inline-block",
+            width: 128,
+          })}
+        >
+          {this.nickname}
+        </span>{" "}
+        <code
+          className={css({
+            display: "inline-block",
+            width: 128,
+            fontWeight: "bold",
+            textAlign: "right",
+          })}
+        >
           {this.hp}/{this.maxHp} HP
-        </b>
+        </code>
+        <span
+          className={css({
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 100 - 100 * vitality + "%",
+            transition: "all 1s ease-out",
+            height: 4,
+            background: color,
+            zIndex: -32,
+          })}
+        ></span>
+        <span
+          className={css({
+            opacity: 1 / 4,
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 5,
+            borderTop: "1px solid black",
+            transition: "all 1s ease-out",
+            background: color,
+            zIndex: -64,
+          })}
+        ></span>
       </span>
     );
   }
