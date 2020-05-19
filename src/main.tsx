@@ -2,6 +2,7 @@ import React from "react";
 
 import { print, sleep, randomChoice } from "./common";
 import { DemonImage } from "./components/DemonImage";
+import { css } from "otion";
 
 export class App {
   started: boolean;
@@ -96,12 +97,21 @@ abstract class Unit {
   position: string;
   range: string;
 
-  constructor() {
-    this.nickname = this.constructor.name;
-  }
-
   [print.as]() {
-    return `<${this.nickname} ${this.hp}/${this.maxHp} HP, ${this.attack} attack>`;
+    return (
+      <span
+        className={css({
+          padding: 4,
+          borderRadius: 4,
+          border: "1px solid #888",
+        })}
+      >
+        <DemonImage name="Tagger" number={96} /> {this.nickname}{" "}
+        <b>
+          {this.hp}/{this.maxHp} HP
+        </b>
+      </span>
+    );
   }
 
   /// Have this unit perform an attack, reducing the HP of another unit.
@@ -136,6 +146,7 @@ class Battlecruiser extends Unit {
   constructor() {
     super();
 
+    this.nickname = "Battlecruiser";
     this.maxHp = 1000;
     this.hp = this.maxHp;
     this.attack = 40;
@@ -149,6 +160,7 @@ class Baneling extends Unit {
   constructor() {
     super();
 
+    this.nickname = "Baneling";
     this.maxHp = 10000;
     this.hp = this.maxHp;
     this.attack = 40;
@@ -162,6 +174,7 @@ class Marine extends Unit {
   constructor() {
     super();
 
+    this.nickname = "Marine";
     this.maxHp = 200;
     this.hp = this.maxHp;
     this.attack = 8;
@@ -175,6 +188,7 @@ class Corruptor extends Unit {
   constructor() {
     super();
 
+    this.nickname = "Corruptor";
     this.maxHp = 150;
     this.hp = this.maxHp;
     this.attack = 30;
