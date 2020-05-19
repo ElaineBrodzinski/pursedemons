@@ -1,2 +1,0 @@
-(this.webpackJsonppursedemons=this.webpackJsonppursedemons||[]).push([[0],{3:function(e,n,t){e.exports=t(8)},8:function(e,n,t){"use strict";t.r(n);var r=t(0),o=t.n(r),a=t(2);var l=function(){return o.a.createElement("div",null,"hello world")};t.n(a).a.render(o.a.createElement(o.a.StrictMode,null,o.a.createElement(l,null)),document.body)}},[[3,1,2]]]);
-//# sourceMappingURL=main.072b156a.chunk.js.map

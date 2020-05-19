@@ -30,7 +30,9 @@
     ".vscode": true,
     "LICENSE": true,
     "mypy.ini": true,
-    "CNAME": true
+    "CNAME": true,
+    "build": true,
+    "docs": true
   },
   "cSpell.words": [
     "Sparklie",

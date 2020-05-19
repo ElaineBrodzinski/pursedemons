@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "git rm -rf docs; rm -rf docs; react-scripts build && cp -R build docs && git add --force docs"
+    "build": "git rm -rf docs build || true; rm -rf docs build; react-scripts build; cp -R build docs; rm -rf docs/asset-manifest.json docs/*manifest*.js docs/service-worker.js; git add --force docs"
   },
   "eslintConfig": {
     "extends": "react-app"

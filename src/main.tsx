@@ -5,8 +5,8 @@ import { DemonImage } from "./components/DemonImage";
 
 export class App {
   started: boolean;
-  ourDemon: Unit;
-  theirDemon: Unit;
+  ourDemon?: Unit;
+  theirDemon?: Unit;
 
   /// Run the application.
   async main() {
@@ -46,6 +46,7 @@ export class App {
     );
   }
 }
+
 const fightToTheDeath = async (red: Unit, blue: Unit) => {
   print("--- WELCOME TO THE MAIN EVENT! ---");
   print("Today! Fighting to the death, for your entertainment, we have...");
@@ -53,7 +54,7 @@ const fightToTheDeath = async (red: Unit, blue: Unit) => {
   print("In the blue corner:", blue);
 
   while (red.hp > 0 && blue.hp > 0) {
-    await sleep(0.25);
+    await sleep(1.0);
 
     let attackFirst: Unit;
     if (red.speed > blue.speed) {
@@ -161,7 +162,7 @@ class Marine extends Unit {
   constructor() {
     super();
 
-    this.maxHp = 40;
+    this.maxHp = 200;
     this.hp = this.maxHp;
     this.attack = 8;
     this.range = "universal";

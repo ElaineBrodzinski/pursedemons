@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 export const sleep = (seconds: number) =>
-  new Promise((resolve) => setTimeout(resolve, seconds / 1000));
+  new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 
 export const randomChoice = <Value extends unknown = unknown>(
   values: Iterable<Value>,
