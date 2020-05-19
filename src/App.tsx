@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "otion";
 
 import { print, sleep, randomChoice } from "./common";
 import { DemonImage } from "./components/DemonImage";
@@ -43,26 +42,28 @@ export class App {
             number={96}
             onClick={() => print("rawr!")}
           />{" "}
-          {this.ourDemon.nickname} with {this.ourDemon.hp}/{this.ourDemon.maxHp} HP.
+          {this.ourDemon.nickname} with {this.ourDemon.hp}/{this.ourDemon.maxHp}{" "}
+          HP.
         </p>
 
         <p>
-          <DemonImage name="Ursa" number={111} />{" "}
-          {this.theirDemon.nickname} with {this.theirDemon.hp}/{this.theirDemon.maxHp} HP.
+          <DemonImage name="Ursa" number={111} /> {this.theirDemon.nickname}{" "}
+          with {this.theirDemon.hp}/{this.theirDemon.maxHp} HP.
         </p>
       </>
     );
   }
-}const fightToTheDeath = async (red: Unit, blue: Unit) => {
+}
+const fightToTheDeath = async (red: Unit, blue: Unit) => {
   print("--- WELCOME TO THE MAIN EVENT! ---");
   print("Today! Fighting to the death, for your entertainment, we have...");
   print("In the red corner:", red);
-  print("In the blue corner:", blue);");
-  
+  print("In the blue corner:", blue);
+
   while (red.hp > 0 && blue.hp > 0) {
     await sleep(0.25);
 
-    let attackFi1.0 Unit;
+    let attackFirst: Unit;
     if (red.speed > blue.speed) {
       attackFirst = red;
     } else if (blue.speed > red.speed) {
