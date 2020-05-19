@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "otion";
 
 import { print, sleep, randomChoice } from "./common";
+import { DemonImage } from "./components/DemonImge";
 
 let _ = `
 TASK BINGO-BONGO-99:
@@ -27,20 +28,12 @@ export class App {
     return (
       <>
         <p>
-          <img
-            className={css({ height: 64 })}
-            src="/prdm/096-tagger/front.png"
-            alt="Tagger, Purse Demon #96"
-          />{" "}
+          <DemonImage name="Tagger" number={96} />
           Tagger with 10/10 HP.
         </p>
 
         <p>
-          <img
-            className={css({ height: 64 })}
-            src="/prdm/111-ursa/front.png"
-            alt="Ursa, Purse Demon #111"
-          />{" "}
+          <DemonImage name="Ursa" number={111} />
           Ursa with 11/11 HP.
         </p>
       </>
