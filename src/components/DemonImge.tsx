@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { css } from "otion";
 
-export const DemonImage: React.FC<{ name: string; number: number }> = ({
-  name,
-  number,
-}) => {
+export const DemonImage: React.FC<{
+  name: string;
+  number: number;
+  onClick?: () => void;
+}> = ({ name, number, onClick }) => {
   const [hovered, setHovered] = useState(false);
 
   const imageType = ["front"];
-  if (hovered) {
+  if (hovered && onClick) {
     imageType.push("sparklie");
   }
   const paddedNumber = String(number).padStart(3, "0");
@@ -20,6 +21,7 @@ export const DemonImage: React.FC<{ name: string; number: number }> = ({
       alt={`${name}, Purse Demon #${number}`}
       src={path}
       draggable={false}
+      onClick={onClick && (() => onClick())}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={css({
@@ -27,6 +29,8 @@ export const DemonImage: React.FC<{ name: string; number: number }> = ({
         imageRendering: "pixelated",
         width: 48,
         height: 48,
+        cursor: onClick ? "pointer" : undefined,
+        userSelect: onClick ? "none" : undefined,
       })}
     />
   );

@@ -28,7 +28,11 @@ export class App {
     return (
       <>
         <p>
-          <DemonImage name="Tagger" number={96} />
+          <DemonImage
+            name="Tagger"
+            number={96}
+            onClick={() => print("rawr!")}
+          />
           Tagger with 10/10 HP.
         </p>
 
