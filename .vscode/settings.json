@@ -29,7 +29,8 @@
     ".pytest_cache": true,
     ".vscode": true,
     "LICENSE": true,
-    "mypy.ini": true
+    "mypy.ini": true,
+    "CNAME": true
   },
   "cSpell.words": [
     "Sparklie",
