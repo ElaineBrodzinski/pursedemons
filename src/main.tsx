@@ -19,7 +19,7 @@ export class App {
     this.ourDemon = new Tagger();
     this.ourDemon.nickname = "Kerrigan";
 
-    this.theirDemon = new Ursus();
+    this.theirDemon = new Ursa();
 
     await fightToTheDeath(this.ourDemon, this.theirDemon);
   }
