@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { css, keyframes } from "otion";
 
 export const sleep = (seconds: number) =>
   new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -19,7 +20,18 @@ export const print = (...values: Array<any>) => {
   console.log(...values);
 
   const output = document.createElement("p");
-  output.classList.add("printed");
+  output.className = css({
+    animationName: `${keyframes({
+      "0%": { opacity: 0.0 },
+      "5%": { opacity: 1.0 },
+      "25%": { opacity: 1.0 },
+      "50%": { opacity: 0.5 },
+      "100%": { opacity: 1.0 },
+    })}`,
+    animationDuration: "8s",
+    animationIterationCount: 1,
+    animationFillMode: "forwards",
+  });
 
   for (let value of values) {
     while (typeof value?.[print.as] === "function") {
@@ -46,8 +58,18 @@ export const print = (...values: Array<any>) => {
     output.appendChild(document.createTextNode(" "));
   }
 
+  const oldMax =
+    window.document.documentElement.scrollHeight - window.innerHeight;
+  const atBottom = window.document.documentElement.scrollTop >= oldMax - 4;
+
   document.body.appendChild(output);
-  window.scroll(0, document.body.scrollHeight);
+
+  const newMax =
+    window.document.documentElement.scrollHeight - window.innerHeight;
+
+  if (atBottom) {
+    window.document.documentElement.scrollTop = newMax;
+  }
 };
 
 print.as = Symbol("print.as");

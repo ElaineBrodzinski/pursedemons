@@ -117,8 +117,8 @@ abstract class Unit {
         ? "#8DA"
         : vitality >= 0.4
         ? "#DA4"
-        : vitality >= 0.3
-        ? "#CDA"
+        : vitality >= 0.2
+        ? "#E93"
         : vitality > 0
         ? "#F00"
         : "#402";
@@ -136,11 +136,12 @@ abstract class Unit {
           name={this.name}
           number={this.number}
           onClick={
-            healable &&
-            (() => {
-              this.hp = this.maxHp;
-              print("You healed ", this);
-            })
+            healable
+              ? () => {
+                  this.hp = this.maxHp;
+                  print("You healed ", this);
+                }
+              : undefined
           }
         />{" "}
         <span
@@ -243,10 +244,10 @@ class Ursa extends Unit {
     this.name = "Ursa";
     this.number = 111;
     this.nickname = this.name;
-    this.maxHp = 10000;
+    this.maxHp = 1000;
     this.hp = this.maxHp;
     this.attack = 40;
-    this.range = "ground";
+    this.range = "universal";
     this.speed = 400;
     this.position = "ground";
   }
