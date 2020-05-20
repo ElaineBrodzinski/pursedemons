@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import { css } from "otion";
 
+import { Species } from "../demons/index";
+
 export const DemonImage: React.FC<{
-  name: string;
-  number: number;
+  species: Species;
   onClick?: () => void;
-}> = ({ name, number, onClick }) => {
+}> = ({ species, onClick }) => {
   const [hovered, setHovered] = useState(false);
 
   const imageType = ["front"];
   if (hovered && onClick) {
     imageType.push("sparklie");
   }
-  const paddedNumber = String(number).padStart(3, "0");
+  const paddedNumber = String(species.number).padStart(3, "0");
   const fileName = imageType.join("-") + ".png";
-  const path = `/prdm/${paddedNumber}-${name.toLowerCase()}/${fileName}`;
+  const path = `/prdm/${paddedNumber}-${species.name.toLowerCase()}/${fileName}`;
 
   return (
     <img
-      alt={`${name}, Purse Demon #${number}`}
+      alt={`${species.name}, Purse Demon #${species.number}`}
       src={path}
       draggable={false}
       onClick={onClick && (() => onClick())}

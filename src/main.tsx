@@ -1,8 +1,9 @@
 import React from "react";
+import { css } from "otion";
 
 import { print, sleep, randomChoice } from "./common";
 import { DemonImage } from "./components/DemonImage";
-import { css } from "otion";
+import { demons, Species, ursus } from "./demons/index";
 
 export class App {
   /// Run the application.
@@ -31,9 +32,17 @@ export class App {
             zIndex: 1000,
           })}
         >
-          <p>{new Tagger().renderCard()}</p>
-
-          <p>{new Tagger().renderCard()}</p>
+          {demons.map((demon) => (
+            <div
+              className={css({
+                display: "block",
+                margin: 4,
+              })}
+            >
+              <DemonImage species={demon} onClick={() => print(demon)} />{" "}
+              <strong>{demon.name}</strong>
+            </div>
+          ))}
         </div>
       </>
     );
@@ -91,6 +100,7 @@ abstract class Unit {
   position: string;
   range: string;
   image: string;
+  species: Species = ursus;
 
   [print.as]() {
     return this.renderCard(false);
@@ -121,8 +131,7 @@ abstract class Unit {
         })}
       >
         <DemonImage
-          name={this.name}
-          number={this.number}
+          species={this.species}
           onClick={
             healable
               ? () => {
