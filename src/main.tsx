@@ -5,49 +5,37 @@ import { DemonImage } from "./components/DemonImage";
 import { css } from "otion";
 
 export class App {
-  ourDemon?: Unit;
-  theirDemon?: Unit;
-
   /// Run the application.
   async main() {
-    for (let i = 0; i < 8; i++) {
-      print(new Tagger());
-      print(new Ursa());
-      print(new Ursus());
-    }
-
-    this.ourDemon = new Tagger();
-    this.ourDemon.nickname = "Kerrigan";
-
-    this.theirDemon = new Ursa();
-
-    await fightToTheDeath(this.ourDemon, this.theirDemon);
+    await fightToTheDeath(new Tagger(), new Ursa());
   }
 
   /// Render the current state of the application to the page.
   render() {
-    if (!(this.ourDemon && this.theirDemon)) {
-      return;
-    }
+    const height = 256;
 
     return (
-      <div
-        className={css({
-          display: "block",
-          position: "fixed",
-          left: 0,
-          right: 0,
-          top: 0,
-          padding: 16,
-          borderBottom: "1px solid black",
-          background: "white",
-          zIndex: 1000,
-        })}
-      >
-        <p>{this.theirDemon.renderCard()}</p>
+      <>
+        <div className={css({ display: "block", height })}></div>
+        <div
+          className={css({
+            display: "block",
+            position: "fixed",
+            left: 0,
+            right: 0,
+            top: 0,
+            padding: 16,
+            height,
+            borderBottom: "1px solid black",
+            background: "white",
+            zIndex: 1000,
+          })}
+        >
+          <p>{new Tagger().renderCard()}</p>
 
-        <p>{this.ourDemon.renderCard()}</p>
-      </div>
+          <p>{new Tagger().renderCard()}</p>
+        </div>
+      </>
     );
   }
 }
@@ -228,7 +216,7 @@ class Tagger extends Unit {
     this.name = "Tagger";
     this.number = 96;
     this.nickname = this.name;
-    this.maxHp = 1000;
+    this.maxHp = 100;
     this.hp = this.maxHp;
     this.attack = 40;
     this.range = "universal";
@@ -244,7 +232,7 @@ class Ursa extends Unit {
     this.name = "Ursa";
     this.number = 111;
     this.nickname = this.name;
-    this.maxHp = 1000;
+    this.maxHp = 100;
     this.hp = this.maxHp;
     this.attack = 40;
     this.range = "universal";
