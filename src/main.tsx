@@ -5,18 +5,21 @@ import { DemonImage } from "./components/DemonImage";
 import { css } from "otion";
 
 export class App {
-  started: boolean;
   ourDemon?: Unit;
   theirDemon?: Unit;
 
   /// Run the application.
   async main() {
-    this.started = true;
+    for (let i = 0; i < 8; i++) {
+      print(new Tagger());
+      print(new Ursa());
+      print(new Ursus());
+    }
 
-    this.ourDemon = new Corruptor();
+    this.ourDemon = new Tagger();
     this.ourDemon.nickname = "Kerrigan";
 
-    this.theirDemon = new Marine();
+    this.theirDemon = new Ursus();
 
     await fightToTheDeath(this.ourDemon, this.theirDemon);
   }
@@ -28,11 +31,23 @@ export class App {
     }
 
     return (
-      <>
+      <div
+        className={css({
+          display: "block",
+          position: "fixed",
+          left: 0,
+          right: 0,
+          top: 0,
+          padding: 16,
+          borderBottom: "1px solid black",
+          background: "white",
+          zIndex: 1000,
+        })}
+      >
         <p>{this.theirDemon.renderCard()}</p>
 
         <p>{this.ourDemon.renderCard()}</p>
-      </>
+      </div>
     );
   }
 }
@@ -78,6 +93,8 @@ const fightToTheDeath = async (red: Unit, blue: Unit) => {
 };
 
 abstract class Unit {
+  name: string;
+  number: number;
   hp: number;
   maxHp: number;
   attack: number;
@@ -85,16 +102,17 @@ abstract class Unit {
   nickname: string;
   position: string;
   range: string;
+  image: string;
 
   [print.as]() {
-    return this.renderCard();
+    return this.renderCard(false);
   }
 
-  renderCard() {
+  renderCard(healable = true) {
     const vitality = this.hp / this.maxHp;
     const color =
       vitality >= 1.0
-        ? "#DFE"
+        ? "#88E0D0"
         : vitality >= 0.8
         ? "#8DA"
         : vitality >= 0.4
@@ -103,7 +121,7 @@ abstract class Unit {
         ? "#CDA"
         : vitality > 0
         ? "#F00"
-        : "#202";
+        : "#402";
     return (
       <span
         className={css({
@@ -114,11 +132,22 @@ abstract class Unit {
           position: "relative",
         })}
       >
-        <DemonImage name="Tagger" number={96} />{" "}
+        <DemonImage
+          name={this.name}
+          number={this.number}
+          onClick={
+            healable &&
+            (() => {
+              this.hp = this.maxHp;
+              print("You healed ", this);
+            })
+          }
+        />{" "}
         <span
           className={css({
             display: "inline-block",
-            width: 128,
+            width: 80,
+            fontWeight: "bold",
           })}
         >
           {this.nickname}
@@ -126,7 +155,7 @@ abstract class Unit {
         <code
           className={css({
             display: "inline-block",
-            width: 128,
+            width: 150,
             fontWeight: "bold",
             textAlign: "right",
           })}
@@ -139,7 +168,7 @@ abstract class Unit {
             bottom: 0,
             left: 0,
             right: 100 - 100 * vitality + "%",
-            transition: "all 1s ease-out",
+            transition: "all 0.5s ease-out",
             height: 4,
             background: color,
             zIndex: -32,
@@ -154,7 +183,7 @@ abstract class Unit {
             right: 0,
             height: 5,
             borderTop: "1px solid black",
-            transition: "all 1s ease-out",
+            transition: "all 0.5s ease-out",
             background: color,
             zIndex: -64,
           })}
@@ -191,11 +220,13 @@ abstract class Unit {
   }
 }
 
-class Battlecruiser extends Unit {
+class Tagger extends Unit {
   constructor() {
     super();
 
-    this.nickname = "Battlecruiser";
+    this.name = "Tagger";
+    this.number = 96;
+    this.nickname = this.name;
     this.maxHp = 1000;
     this.hp = this.maxHp;
     this.attack = 40;
@@ -205,11 +236,13 @@ class Battlecruiser extends Unit {
   }
 }
 
-class Baneling extends Unit {
+class Ursa extends Unit {
   constructor() {
     super();
 
-    this.nickname = "Baneling";
+    this.name = "Ursa";
+    this.number = 111;
+    this.nickname = this.name;
     this.maxHp = 10000;
     this.hp = this.maxHp;
     this.attack = 40;
@@ -219,30 +252,18 @@ class Baneling extends Unit {
   }
 }
 
-class Marine extends Unit {
+class Ursus extends Unit {
   constructor() {
     super();
 
-    this.nickname = "Marine";
+    this.name = "Ursus";
+    this.number = 112;
+    this.nickname = this.name;
     this.maxHp = 200;
     this.hp = this.maxHp;
     this.attack = 8;
     this.range = "universal";
     this.speed = 100;
     this.position = "ground";
-  }
-}
-
-class Corruptor extends Unit {
-  constructor() {
-    super();
-
-    this.nickname = "Corruptor";
-    this.maxHp = 150;
-    this.hp = this.maxHp;
-    this.attack = 30;
-    this.range = "air";
-    this.speed = 50;
-    this.position = "air";
   }
 }
