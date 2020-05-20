@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { css, keyframes } from "otion";
+import { css, keyframes } from "emotion";
 
 export const sleep = (seconds: number) =>
   new Promise((resolve) => setTimeout(resolve, seconds * 1000));

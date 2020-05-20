@@ -1,14 +1,19 @@
 import React from "react";
-import { css } from "otion";
+import { css } from "emotion";
 
 import { print, sleep, randomChoice } from "./common";
 import { DemonImage } from "./components/DemonImage";
-import { demons, Species, ursus } from "./demons/index";
+import { demons, Species, ursus, ursa, tagger } from "./demons/index";
 
 export class App {
+  stars: Array<Unit> = [];
+
   /// Run the application.
   async main() {
-    await fightToTheDeath(new Tagger(), new Ursa());
+    const tagger = new Tagger();
+    const ursa = new Ursa();
+    this.stars = [tagger, ursa];
+    await fightToTheDeath(tagger, ursa);
   }
 
   /// Render the current state of the application to the page.
@@ -32,17 +37,31 @@ export class App {
             zIndex: 1000,
           })}
         >
-          {demons.map((demon) => (
-            <div
-              className={css({
-                display: "block",
-                margin: 4,
-              })}
-            >
-              <DemonImage species={demon} onClick={() => print(demon)} />{" "}
-              <strong>{demon.name}</strong>
-            </div>
-          ))}
+          <div>
+            {this.stars.map((star) => (
+              <div
+                className={css({
+                  display: "inline-block",
+                  margin: 16,
+                })}
+              >
+                {star.renderCard()}
+              </div>
+            ))}
+          </div>
+          <div>
+            {demons.map((demon) => (
+              <div
+                className={css({
+                  display: "inline-block",
+                  margin: 16,
+                })}
+              >
+                <DemonImage species={demon} onClick={() => print(demon)} />{" "}
+                <strong>{demon.name}</strong>
+              </div>
+            ))}
+          </div>
         </div>
       </>
     );
@@ -90,8 +109,7 @@ const fightToTheDeath = async (red: Unit, blue: Unit) => {
 };
 
 abstract class Unit {
-  name: string;
-  number: number;
+  species: Species;
   hp: number;
   maxHp: number;
   attack: number;
@@ -100,7 +118,6 @@ abstract class Unit {
   position: string;
   range: string;
   image: string;
-  species: Species = ursus;
 
   [print.as]() {
     return this.renderCard(false);
@@ -158,7 +175,10 @@ abstract class Unit {
             textAlign: "right",
           })}
         >
-          {this.hp}/{this.maxHp} HP
+          <span className={css({ color: vitality < 0.2 ? "#800" : "#000" })}>
+            {this.hp}
+          </span>
+          /{this.maxHp} HP
         </code>
         <span
           className={css({
@@ -222,10 +242,9 @@ class Tagger extends Unit {
   constructor() {
     super();
 
-    this.name = "Tagger";
-    this.number = 96;
-    this.nickname = this.name;
-    this.maxHp = 100;
+    this.species = tagger;
+    this.nickname = this.species.name;
+    this.maxHp = 400;
     this.hp = this.maxHp;
     this.attack = 40;
     this.range = "universal";
@@ -238,30 +257,13 @@ class Ursa extends Unit {
   constructor() {
     super();
 
-    this.name = "Ursa";
-    this.number = 111;
-    this.nickname = this.name;
-    this.maxHp = 100;
+    this.species = ursa;
+    this.nickname = this.species.name;
+    this.maxHp = 400;
     this.hp = this.maxHp;
     this.attack = 40;
     this.range = "universal";
     this.speed = 400;
-    this.position = "ground";
-  }
-}
-
-class Ursus extends Unit {
-  constructor() {
-    super();
-
-    this.name = "Ursus";
-    this.number = 112;
-    this.nickname = this.name;
-    this.maxHp = 200;
-    this.hp = this.maxHp;
-    this.attack = 8;
-    this.range = "universal";
-    this.speed = 100;
     this.position = "ground";
   }
 }

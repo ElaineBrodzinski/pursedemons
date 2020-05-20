@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { css } from "otion";
+import { css } from "emotion";
 
 import { Species } from "../demons/index";
 
@@ -15,7 +15,7 @@ export const DemonImage: React.FC<{
   }
   const paddedNumber = String(species.number).padStart(3, "0");
   const fileName = imageType.join("-") + ".png";
-  const path = `/prdm/${paddedNumber}-${species.name.toLowerCase()}/${fileName}`;
+  const path = `/demons/${paddedNumber}-${species.name.toLowerCase()}/${fileName}`;
 
   return (
     <img
